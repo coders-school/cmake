@@ -10,16 +10,16 @@ ___
 
 ## CMake
 
-* <!-- .element: class="fragment fade-in" --> automatyzuje proces budowania dla C/C++
-* <!-- .element: class="fragment fade-in" --> obsługuje generowanie projektów dla wielu IDE
-* <!-- .element: class="fragment fade-in" --> może składać się z wielu modułów, które się łączy (odpowiednik #include)
-* <!-- .element: class="fragment fade-in" --> niezależny od platformy (jeśli jest dobrze napisany)
-* <!-- .element: class="fragment fade-in" --> konfiguracja budowania w pliku CMakeLists.txt
-* <!-- .element: class="fragment fade-in" --> generuje system budowania (np. pliki Makefile)
+* <!-- .element: class="fragment fade-in" --> automates the build process for C/C++
+* <!-- .element: class="fragment fade-in" --> supports generating projects for multiple IDEs
+* <!-- .element: class="fragment fade-in" --> can consists of many modules that are combined (equivalent of #include)
+* <!-- .element: class="fragment fade-in" --> platform independent (if well written)
+* <!-- .element: class="fragment fade-in" --> build configuration in CMakeLists.txt file
+* <!-- .element: class="fragment fade-in" --> generate a build systems (e.g. Makefiles)
 
 ___
 
-## Minimalny `CMakeLists.txt`
+## Minimal `CMakeLists.txt`
 
 ```cmake
 cmake_minimum_required(VERSION 3.10)
@@ -30,28 +30,28 @@ add_executable(execName main.cpp file.cpp)
 
 ___
 
-## Budowanie za pomocą CMake'a
+## Building with CMake'a
 
 ```bash
-mkdir build     # tworzymy katalog z wynikami budowania
-cd build        # wchodzimy do tego katalogu
-cmake ..        # generujemy system budowania podając ścieżkę do pliku CMakeLists.txt
-cmake --build . # budujemy projekt
+mkdir build     # create a directory with the results of the building
+cd build        # enter this directory
+cmake ..        # generate the build system by specifying the path to the CMakeLists.txt file
+cmake --build . # build a project
 ```
 
-`cmake --build` można zamienić na `make` jeśli wiemy, że na pewno generujemy Makefile.
+`cmake --build` can be changed for `make` if we're sure, that we're generating Makefile.
 <!-- .element: class="fragment fade-in" -->
 
-`cmake --build` jest uniwersalne.
+`cmake --build` is universal.
 <!-- .element: class="fragment fade-in" -->
 
 ___
 
-## Zadanie
+## Exercise
 
-Napisz prosty CMakeLists.txt dla programu z katalogu `greeter`, zbuduj go za pomocą `cmake` i uruchom.
+Write simple CMakeLists.txt for program from `greeter` directory, build it with `cmake` and run.
 
-Zauważ, że są tutaj też testy. Dopisz dodatkowy target dla testów.
+Notice that there is also a tests. Write additional target for tests.
 
 ___
 
@@ -59,17 +59,17 @@ ___
 
 ___
 
-## CMake - zmienne
+## CMake - variables
 
-Zmienne tworzymy za pomocą komendy `set`
+Variables are created with `set` command
 <!-- .element: class="fragment fade-in" -->
 
 ```cmake
-set(VARIABLE value)  # Konwencja - UPPERCASE_WITH_UNDERSCORE
+set(VARIABLE value)  # Convention - UPPERCASE_WITH_UNDERSCORE
 ```
 <!-- .element: class="fragment fade-in" -->
 
-Przykładowo
+For example
 <!-- .element: class="fragment fade-in" -->
 
 ```cmake
@@ -77,7 +77,7 @@ set(NAME TheGreatestProject)
 ```
 <!-- .element: class="fragment fade-in" -->
 
-Odnosimy się do nich później obejmując w nawiasy `{}` i poprzedzając znakiem `$`
+We refer to them later by enclosing them in `{}` parentheses and preceding them with the `$` sign
 <!-- .element: class="fragment fade-in" -->
 
 ```cmake
@@ -85,17 +85,17 @@ add_executable(${NAME} main.cpp)
 ```
 <!-- .element: class="fragment fade-in" -->
 
-Spowoduje to utworzenie targetu `TheGreatestProject`, w ramach którego skompilowany zostanie plik `main.cpp`
+That will create a target `TheGreatestProject` in which `main.cpp` file will be compiled
 <!-- .element: class="fragment fade-in" -->
 
 ___
 
-## CMake - predefiniowane zmienne
+## CMake - predefined variables
 
-CMake domyślnie dostarcza kilka zmiennych. Odwoływanie się do nich bezpośrednio lub ich modyfikacja zazwyczaj nie są uznawane za dobre praktyki.
+CMake supplies several variables by default. Referring to them directly or modifying them is usually not considered good practice.
 <!-- .element: class="fragment fade-in" -->
 
-Możemy za to bez większych problemów wykorzystać zmienną `${PROJECT_NAME}`. Zawiera ona nazwę projektu zdefiniowaną przez komendę `project()`
+We can use the `$ {PROJECT_NAME}` variable without any problems. It contains the project name defined by the `project ()` command
 <!-- .element: class="fragment fade-in" -->
 
 ```cmake
@@ -106,11 +106,11 @@ add_executable(${PROJECT_NAME} main.cpp vectorFunctions.cpp)
 
 ___
 
-## Tworzenie aplikacji i bibliotek
+## Create applications and libraries
 
 [CMake manual](https://cmake.org/cmake/help/latest/manual/cmake-commands.7.html#id4)
 
-Poniższe komendy możesz potraktować jako "konstruktory". Tworzą one "targety".
+You can treat the following commands as "constructors". They form "targets"
 
 ```cmake
 add_executable(<name> [source1] [source2 ...])
@@ -130,61 +130,61 @@ add_executable(${PROJECT_NAME}-ut test.cpp functions.cpp modules.cpp)
 ### Problem
 <!-- .element: class="fragment fade-in" -->
 
-Powielona lista plików w różnych "targetach"
+Duplicated list of files in different "targets"
 <!-- .element: class="fragment fade-in" -->
 
 ___
 
 ### Problem #1
 
-Powielona lista plików w różnych "targetach"
+Duplicated list of files in different "targets"
 
-### Rozwiązanie
+### Solution
 <!-- .element: class="fragment fade-in" -->
 
-Wrzucenie listy plików do zmiennej
+Putting a list of files into a variable
 <!-- .element: class="fragment fade-in" -->
 
-## Zadanie
+## Exercise
 <!-- .element: class="fragment fade-in" -->
 
-Wrzuć listę plików do zmiennej i skorzystaj z niej
+Put a list of files into a variable and use it
 <!-- .element: class="fragment fade-in" -->
 
 ___
 
 ### Problem #2
 
-Drobne różnice w plikach pomiędzy targetami
+Minor differences in files between targets
 <!-- .element: class="fragment fade-in" -->
 
-### Rozwiązanie
+### Solution
 <!-- .element: class="fragment fade-in" -->
 
-Utworzenie biblioteki
+Creating a library
 <!-- .element: class="fragment fade-in" -->
 
 ___
 
-## Biblioteki
+## Libraries
 
-Moja definicja biblioteki - zlepek wielu plików cpp bez funkcji `main()`. Biblioteki nie można z tego powodu uruchomić.
+My library definition - a cluster of multiple cpp files without the `main ()` function. Therefore, the library cannot be run.
 <!-- .element: class="fragment fade-in" -->
 
-### Analogia do programowania obiektowego
+### Analogy to object oriented programming
 <!-- .element: class="fragment fade-in" -->
 
-* <!-- .element: class="fragment fade-in" --> Biblioteka = klasa (bazowa)
-  * <!-- .element: class="fragment fade-in" --> pola, metody = pliki cpp
-* <!-- .element: class="fragment fade-in" --> Binarka = klasa pochodna
-  * <!-- .element: class="fragment fade-in" --> finalna, nie można po niej dziedziczyć
-* <!-- .element: class="fragment fade-in" --> Linkowanie = dziedziczenie
-  * <!-- .element: class="fragment fade-in" --> zlinkowanie binarki z biblioteką oznacza dorzucenie do niej kodu z biblioteki
-  * <!-- .element: class="fragment fade-in" --> biblioteki można ze sobą wzajemnie linkować
+* <!-- .element: class="fragment fade-in" --> Library = class (base)
+  * <!-- .element: class="fragment fade-in" --> fields, methods = cpp files
+* <!-- .element: class="fragment fade-in" --> Binary = derived class
+  * <!-- .element: class="fragment fade-in" --> final, cannot be inherited from it
+* <!-- .element: class="fragment fade-in" --> Linking = inheritance
+  * <!-- .element: class="fragment fade-in" --> linking a binary to a library means adding code from the library to it
+  * <!-- .element: class="fragment fade-in" --> libraries can be linked with each other
 
 ___
 
-## Linkowanie bibliotek
+## Linking libraries
 
 ```cmake
 target_link_libraries(<target> ... <item>... ...)
@@ -200,15 +200,15 @@ target_link_libraries(ut lib)
 ```
 <!-- .element: class="fragment fade-in" -->
 
-### Zadanie
+### Exercise
 <!-- .element: class="fragment fade-in" -->
 
-Utwórz bibliotekę, która będzie zawierać powtarzające się pliki cpp i zlinkuj z nią targety, które ich używały.
+Create a library that will contain duplicate cpp files and link to it with the targets that used them.
 <!-- .element: class="fragment fade-in" -->
 
 ___
 
-## Flagi kompilacji
+## Build flags
 
 ```cmake
 target_compile_options(<target> [BEFORE]
@@ -224,15 +224,15 @@ target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Werror)
 ```
 <!-- .element: class="fragment fade-in" -->
 
-### Zadanie
+### Exercise
 <!-- .element: class="fragment fade-in" -->
 
-Dodaj flagi kompilacji `-Wall -Wextra -Werror -pedantic -Wconversion -O3` do projektu greeter
+Add build flags `-Wall -Wextra -Werror -pedantic -Wconversion -O3` to the greeter project
 <!-- .element: class="fragment fade-in" -->
 
 ___
 
-## Włączanie standardu C++17
+## Enabling the C ++ 17 standard
 
 ```cmake
 set(CMAKE_CXX_STANDARD 17)
@@ -240,7 +240,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ```
 <!-- .element: class="fragment fade-in" -->
 
-Powyższe może nie działać dla MSVC.
+The above may not work for MSVC.
 <!-- .element: class="fragment fade-in" -->
 
 ```cmake
@@ -256,15 +256,15 @@ target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)
 ```
 <!-- .element: class="fragment fade-in" -->
 
-### Zadanie
+### Exercise
 <!-- .element: class="fragment fade-in" -->
 
-Włącz standard C++17 w projekcie greeter
+Enable the C++17 standard in the greeter project
 <!-- .element: class="fragment fade-in" -->
 
 ___
 
-## Dodawanie testów do `ctest`
+## Adding tests to `ctest`
 
 ```cmake
 enable_testing()
@@ -278,17 +278,17 @@ add_test(NAME someTests COMMAND ${PROJECT_NAME}-ut)
 ```
 <!-- .element: class="fragment fade-in" -->
 
-### Zadanie
+### Exercise
 <!-- .element: class="fragment fade-in" -->
 
-Dodaj binarkę z testami, która powinna być odpalana za pomocą `ctest`
+Add a test binary that should be run with `ctest`
 <!-- .element: class="fragment fade-in" -->
 
 ___
 
-## Budowanie w trybie debug
+## Build in debug mode
 
-Domyślnie budowany jest tryb "Release" (bez symboli debugowania)
+By default, the "Release" mode is built (no debugging symbols)
 <!-- .element: class="fragment fade-in" -->
 
 ```cmake
@@ -296,7 +296,7 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 ```
 <!-- .element: class="fragment fade-in" -->
 
-Jeśli chcemy wspierać budowanie w trybach Debug i Release powinniśmy mieć do nich oddzielne katalogi z rezultatami budowania
+If we want to support building in Debug and Release modes, we should have separate directories with build results
 <!-- .element: class="fragment fade-in" -->
 
 ```bash
@@ -309,7 +309,7 @@ cmake --build
 
 ___
 
-## Linki dla poszerzenia wiedzy
+## Links for learning more
 
 * [CMake - from zero to something - prezentacja z Wro.cpp](https://muttleyxd.github.io)
 * [19 reasons why CMake is actually awesome](https://kubasejdak.com/19-reasons-why-cmake-is-actually-awesome)
