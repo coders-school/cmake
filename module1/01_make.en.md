@@ -47,7 +47,7 @@ calculator:
 
 ___
 
-## Compilation in C++
+## Compilation in C ++
 
 ### Do you remember the build phases?
 <!-- .element: class="fragment fade-in" -->
