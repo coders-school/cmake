@@ -51,7 +51,7 @@ ___
 
 Write simple CMakeLists.txt for program from `greeter` directory, build it with `cmake` and run.
 
-Notice that there is also a tests. Write additional target for tests.
+Notice that there are also tests. Write additional target for tests.
 
 ___
 
