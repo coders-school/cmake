@@ -30,7 +30,7 @@ add_executable(execName main.cpp file.cpp)
 
 ___
 
-## Building with CMake'a
+## Building with CMake
 
 ```bash
 mkdir build     # create a directory with the results of the building
