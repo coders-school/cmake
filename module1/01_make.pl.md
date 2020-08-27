@@ -8,9 +8,9 @@
 
 ___
 
-## Makefiles
+## Pliki Makefile
 
-### The structure of the Makefile
+### Struktura pliku Makefile
 
 ```Makefile
 VARIABLE = value
@@ -24,7 +24,7 @@ targetB: dependencyB1
 
 ___
 
-## Example - generating a presentation in LaTeX
+## Przykład - generowanie prezentacji w LaTeX
 
 ```Makefile
 TEX = pdflatex -shell-escape -interaction=nonstopmode -file-line-error
@@ -47,9 +47,9 @@ calculator:
 
 ___
 
-## Compilation in C ++
+## Kompilacja w C++
 
-### Do you remember the build phases?
+### Pamiętacie fazy kompilacji?
 <!-- .element: class="fragment fade-in" -->
 
 ```Makefile
@@ -64,24 +64,24 @@ $(OBJECTS): src/%.o : src/%.cpp src/%.hpp
 ```
 <!-- .element: class="fragment fade-in" -->
 
-### Variables remembering the context
+### Zmienne pamiętające kontekst
 <!-- .element: class="fragment fade-in" -->
 
-* <!-- .element: class="fragment fade-in" --> <code>$@</code> - the name of the target file in the currently running rule
-* <!-- .element: class="fragment fade-in" --> <code>$<</code> - first dependency name
-* <!-- .element: class="fragment fade-in" --> <code>$^</code> - list of all dependencies (includes any duplicates)
-* <!-- .element: class="fragment fade-in" --> <code>$?</code> - a list of all dependencies that are newer than target
+* <!-- .element: class="fragment fade-in" --> <code>$@</code> - nazwa pliku targetu w aktualnie uruchomionej regule
+* <!-- .element: class="fragment fade-in" --> <code>$<</code> - nazwa pierwszej zależności
+* <!-- .element: class="fragment fade-in" --> <code>$^</code> - lista wszystkich zależności (zawiera ewentualne duplikaty)
+* <!-- .element: class="fragment fade-in" --> <code>$?</code> - lista wszystkich zależności, które są nowsze niż target
 
 ___
 
-## Exercise
+## Zadanie
 
-In the greeter directory you will find a small program. Familiarize yourself with its code.
+W katalogu greeter znajdziesz malutki program. Zapoznaj się z jego kodem.
 
-* Compile the program from the command line and run it.
-* Write a simple Makefile for this program. Build it with `make` and run it.
+* Skompiluj program z linii komend i uruchom go.
+* Napisz prosty Makefile dla tego programu. Zbuduj go za pomocą `make` i uruchom.
 
-### Spell of building
+### Zaklęcie kompilacji
 
 ```bash
 g++ -std=c++17 -Wall -Werror -Wextra -pedantic *.cpp -o greeter
@@ -90,19 +90,19 @@ g++ -std=c++17 -Wall -Werror -Wextra -pedantic *.cpp -o greeter
 
 ___
 
-## `make` command
+## Polecenie `make`
 
-* <!-- .element: class="fragment fade-in" --> by default it looks for a Makefile in the current directory
-* <!-- .element: class="fragment fade-in" --> automates activities by executing recipes saved in Makefile files
-* <!-- .element: class="fragment fade-in" --> executes the first recipe by default
-* <!-- .element: class="fragment fade-in" --> allows for conditional performance of activities
-* <!-- .element: class="fragment fade-in" --> allows defining many dependencies
-* <!-- .element: class="fragment fade-in" --> by default, it takes into account dependency modification dates and on this basis decides whether to execute a given recipe
+* <!-- .element: class="fragment fade-in" --> domyślnie szuka w bieżącym katalogu pliku Makefile
+* <!-- .element: class="fragment fade-in" --> automatyzuje czynności poprzez wykonywanie receptur zapisanych w plikach Makefile
+* <!-- .element: class="fragment fade-in" --> domyślnie wykonuje pierwszą recepturę
+* <!-- .element: class="fragment fade-in" --> pozwala na warunkowe wykonywanie czynności
+* <!-- .element: class="fragment fade-in" --> pozwala definiować wiele zależności
+* <!-- .element: class="fragment fade-in" --> domyślnie uwzględnia daty modyfikacji zależności i na tej podstawie podejmuje decyzję, czy wykonać daną recepturę
 
 ___
 
 ## Q&A
 
-### links
+### Linki
 
 [cpp-polska.pl](https://cpp-polska.pl/post/potwor-przeszlosci-makefile-cz-2)
