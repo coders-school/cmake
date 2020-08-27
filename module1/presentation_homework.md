@@ -1,8 +1,8 @@
 <!-- .slide: data-background="#111111" -->
 
-# Narzędzia #3
+# Tools #3
 
-## Podsumowanie
+## Summary
 
 <a href="https://coders.school">
     <img width="500" data-src="../coders_school_logo.png" alt="Coders School" class="plain">
@@ -10,48 +10,48 @@
 
 ___
 
-## Co pamiętasz z dzisiaj?
+## What do you remember from today?
 
-### Napisz na czacie jak najwięcej haseł
+### Write as many topics as possible in the chat
 <!-- .element: class="fragment fade-in" -->
 
 ___
 
 ### Pre-work
 
-* Poczytajcie o zasadach SOLID, dotyczących pisania dobrego kodu obiektowego
-* Poczytajcie o zasadach dobrego kodu w C++ na [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
-* Dowiedzcie się czym jest problem diamentowy na Obiektowość #4
+* Read about the SOLID rules for writing good object-oriented code
+* Read about the principles of good code in C ++ at [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
+* Find out what the diamond problem is on Object Orientation #4
 
 ___
 
 ### Post-work
 
-* Dorzućcie do projektu SHM system budowania `cmake` (10 punktów, 2 za każdy podpunkt)
-* Przygotujcie SHM do testowania (10 punktów, 2 za każdy podpunkt)
+* Add the `cmake` building system to the SHM project (10 points, 2 for each subtask)
+* Prepare SHM for testing (10 points, 2 for each subtask)
 
 #### Bonus
 
-* Dostarczenie przed niedzielą 05.07.2020 23:59 (2 punkty za zadanie, razem 4)
+* Delivery before Sunday 05.07.2020 23:59 (2 points per task, 4 in total) <!--Czy zmienić zapis daty na amerykański (07/05/2020)-->
 
 ___
 
-### `cmake` w SHM
+### `cmake` in SHM
 
-* Użyjcie zmiennej `${PROJECT_NAME}`
-* Lista plików cpp w zmiennej
-* Wszystko poza plikiem `main.cpp` powinno kompilować się do biblioteki statycznej
-* Binarka (main.cpp) powinna linkować się z powyższą biblioteką.
-* Napiszcie odpowiedni plik `.github/workflows/main.yml` który spowoduje, że GitHub będzie automatycznie uruchamiał kompilację projektu dla każdego nowego commita.
+* Use the variable `${PROJECT_NAME}`
+* List of cpp files in the variable
+* Everything except `main.cpp` should compile to a static library
+* Binary (main.cpp) should be linked with the above library.
+* Write an appropriate file `.github/workflows/main.yml` which will cause GitHub to automatically run a project build for each new commit.
 
 ___
 
-### Podwaliny pod testy w SHM
+### The foundations for testing in SHM
 
-Na podstawie lektury plików CMakeLists.txt z prac domowych wywnioskujcie, w jaki sposób dodawana jest biblioteka `gtest` do testów
+On the basis of reading CMakeLists.txt files from homework, deduce how the `gtest` library is added to tests
 
-* Utwórzcie proste testy do projektu SHM (co najmniej 1 test metodą Copy&Paste z innych prac domowych)
-* Skopiujcie odpowiednie pliki, które pozwolą na użycie `gtesta`
-* Dodajcie binarkę z testami do CMakeLists.txt. Nazwijcie ją `${PROJECT_NAME}-ut`
-* Dodajcie odpalanie testów za pomocą `ctest`
-* Zmodyfikujcie plik `.github/workflows/main.yml` aby GitHub dodatkowo uruchamiał jeszcze testy
+* Create simple tests for SHM project (at least 1 test with Copy&Paste method from other homework)
+* Copy the appropriate files that will allow the use of `gtest`
+* Add the test binary to CMakeLists.txt. Name it `${PROJECT_NAME}-ut`
+* Add test run with `ctest`
+* Modify the file `.github/workflows/main.yml` so GitHub will also run tests
