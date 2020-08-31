@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Intro</title>
+
+        <meta name="description" content="OOP">
+        <meta name="author" content="Mateusz Adamski & Łukasz Ziobroń">
+        
+        <link rel="stylesheet" href="../../css/reset.css">
+        <link rel="stylesheet" href="../../css/reveal.css">
+        <link rel="stylesheet" href="../../css/theme/coders.css" id="theme">
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../../lib/css/monokai.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? '../../css/print/pdf.css' : '../../css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+                    <section data-background="#111111">
+
+                        <h1>Narzędzia #3</h1>
+                        <h2>Systemy budowania</h2>
+                        <a href="https://coders.school">
+                            <img width="500" data-src="../coders_school_logo.png" alt="Coders School" class="plain">
+                        </a>
+                        <h3>Mateusz Adamski</h3>
+                        <h3>Łukasz Ziobroń</h3>
+
+                    </section>
+                </section>
+
+                <section data-markdown="about_you.md" data-separator-vertical="^___"
+                    data-separator-notes="^Note:">
+                </section>
+
+                <section data-markdown="about_lukasz.md" data-separator-vertical="^___"
+                    data-separator-notes="^Note:">
+                </section>
+
+                <section data-markdown="contract.md" data-separator-vertical="^___"
+                    data-separator-notes="^Note:">
+                </section>
+
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                        ## Zadania
+
+                        Repo GH `coders-school/cmake`
+
+                        [https://github.com/coders-school/cmake/](https://github.com/coders-school/cmake/)
+
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                        ## Kilka pytań
+
+                        * <!-- .element: class="fragment fade-in" --> jak współpraca grupowa?
+                        * <!-- .element: class="fragment fade-in" --> kto zrozumiał polimorfizm?
+
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                        ## Dalszy rozwój SHM
+
+                        Zachęcamy wszystkich do ciągłego rozwijania projektu SHM "w tle", uzupełniając go o rzeczy, których na bieżąco będziemy się uczyć w trakcie kursu, takie jak:
+                        <!-- .element: class="fragment fade-in" --> 
+                        
+                        * <!-- .element: class="fragment fade-in" --> system budowania
+                        * <!-- .element: class="fragment fade-in" --> testy jednostkowe
+                        * <!-- .element: class="fragment fade-in" --> nowości z C++11/14/17/20
+                        
+                        Nie będziemy za to przyznawać dodatkowych punktów ani też sprawdzać tego kodu. Sami rozwijajcie tę aplikację i dzielcie się spostrzeżeniami wewnątrz swojej grupy i z innymi grupami na Discordzie.
+                        <!-- .element: class="fragment fade-in" --> 
+                        
+                        Celem jest skuteczna nauka C++ i szybkie stosowanie nowo poznanych rzeczy w projektach, dzięki czemu zapamiętacie je lepiej :)
+                        <!-- .element: class="fragment fade-in" --> 
+
+                        </textarea>
+                    </section>
+                </section>
+
+                <section data-markdown="coffee_break.md" data-separator-vertical="^___"
+                    data-separator-notes="^Note:">
+                </section>
+
+                <section data-markdown="lunch_break.md" data-separator-vertical="^___"
+                    data-separator-notes="^Note:">
+                </section>
+
+                <section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                        <!-- .slide: data-background="#111111" -->
+
+                        # Narzędzia #3
+
+                        ## Podsumowanie
+
+                        <a href="https://coders.school">
+                            <img width="500" data-src="../coders_school_logo.png" alt="Coders School" class="plain">
+                        </a>
+
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                        ## Co pamiętasz z dzisiaj?
+
+                        ### Napisz na czacie jak najwięcej haseł
+                        <!-- .element: class="fragment fade-in" -->
+                            
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                        ### Pre-work
+
+                        * Poczytajcie o zasadach SOLID, dotyczących pisania dobrego kodu obiektowego
+                        * Poczytajcie o zasadach dobrego kodu w C++ na [CppCoreGuidelines](https://github.com/isocpp/CppCoreGuidelines/blob/master/CppCoreGuidelines.md)
+                        * Dowiedzcie się czym jest problem diamentowy na Obiektowość #4
+                            
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                        ### Post-work
+
+                        * Dorzućcie do projektu SHM system budowania `cmake` (10 punktów, 2 za każdy podpunkt)
+                        * Przygotujcie SHM do testowania (10 punktów, 2 za każdy podpunkt)
+                        
+                        #### Bonus
+                        
+                        * Dostarczenie przed niedzielą 05.07.2020 23:59 (2 punkty za zadanie, razem 4)
+
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                        ### `cmake` w SHM
+
+                        * Użyjcie zmiennej `${PROJECT_NAME}`
+                        * Lista plików cpp w zmiennej
+                        * Wszystko poza plikiem `main.cpp` powinno kompilować się do biblioteki statycznej
+                        * Binarka (main.cpp) powinna linkować się z powyższą biblioteką.
+                        * Napiszcie odpowiedni plik `.github/workflows/main.yml` który spowoduje, że GitHub będzie automatycznie uruchamiał kompilację projektu dla każdego nowego commita.
+
+                        </textarea>
+                    </section>
+                    <section data-markdown>
+                        <textarea data-template>
+
+                        ### Podwaliny pod testy w SHM
+
+                        Na podstawie lektury plików CMakeLists.txt z prac domowych wywnioskujcie, w jaki sposób dodawana jest biblioteka `gtest` do testów
+                        
+                        * Utwórzcie proste testy do projektu SHM (co najmniej 1 test metodą Copy&Paste z innych prac domowych)
+                        * Skopiujcie odpowiednie pliki, które pozwolą na użycie `gtesta`
+                        * Dodajcie binarkę z testami do CMakeLists.txt. Nazwijcie ją `${PROJECT_NAME}-ut`
+                        * Dodajcie odpalanie testów za pomocą `ctest`
+                        * Zmodyfikujcie plik `.github/workflows/main.yml` aby GitHub dodatkowo uruchamiał jeszcze testy
+
+                        </textarea>
+                    </section>
+                </section>
+
+                <section data-background="#111111">
+
+                    <h1>Coders School</h1>
+                    <img width="400" data-src="../logo.png" alt="Coders School" class="plain">
+
+                </section>
+            </div>
+        </div>
+
+        <script src="../../js/reveal.js"></script>
+
+        <script>
+            // More info about config & dependencies:
+            // - https://github.com/hakimel/reveal.js#configuration
+            // - https://github.com/hakimel/reveal.js#dependencies
+            Reveal.initialize({
+                width: 1200,
+                height: 750,
+                slideNumber: true,
+                hash: true,
+                pdfSeparateFragments: false,
+                dependencies: [
+                    { src: '../../plugin/externalcode/externalcode.js', condition: function() { return !!document.querySelector( '[data-code]' ); } },
+                    { src: '../../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../../plugin/markdown/marked.js' },
+                    { src: '../../plugin/markdown/markdown.js' },
+                    { src: '../../plugin/notes/notes.js', async: true }
+                ]
+            });
+        </script>
+    </body>
+</html>
