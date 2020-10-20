@@ -9,5 +9,3 @@
 ### [`make`](module1/presentation_make.md)
 
 ### [`cmake`](module1/presentation_cmake.md)
-
-### [homework](module1/presentation_homework.md)
