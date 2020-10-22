@@ -9,3 +9,5 @@
 ### [`make`](module1/presentation_make.md)
 
 ### [`cmake`](module1/presentation_cmake.md)
+
+### [Zadanie domowe](module1/presentation_homework.md)
