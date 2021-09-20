@@ -49,7 +49,7 @@ Jeśli chcemy wspierać budowanie w trybach Debug i Release powinniśmy mieć do
 mkdir buildDebug
 cd buildDebug
 cmake -DCMAKE_BUILD_TYPE=Debug ..
-cmake --build
+cmake --build .
 ```
 <!-- .element: class="fragment fade-in" -->
 
