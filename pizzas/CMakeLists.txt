@@ -14,7 +14,10 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
-set(SRC
+set(THREADS_PREFER_PTHREAD_FLAG ON)
+find_package(Threads REQUIRED)
+
+set(SRC_LIST
     ./src/Funghi.cpp
     ./src/Margherita.cpp
     ./src/Pizza.cpp
@@ -22,7 +25,7 @@ set(SRC
 
 set(FLAGS -Wall -Wextra -Werror -pedantic -Wconversion -O1)
 
-add_library(${PROJECT_NAME}-lib STATIC ${SRC})
+add_library(${PROJECT_NAME}-lib STATIC ${SRC_LIST})
 target_compile_options(${PROJECT_NAME}-lib PRIVATE ${FLAGS})
 target_compile_features(${PROJECT_NAME}-lib PRIVATE cxx_std_17)
 
