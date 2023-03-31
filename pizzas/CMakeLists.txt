@@ -41,7 +41,7 @@ link_libraries(gmock)
 add_test(NAME pizzasTests COMMAND ${PROJECT_NAME}-ut)
 # TODO: Write proper build system :)
 
-add_executable(${PROJECT_NAME}-ut ./test/test_main.cpp ./test/PizzeriaTest.cpp)
+add_executable(${PROJECT_NAME}-ut test/test_main.cpp test/PizzeriaTest.cpp)
 target_link_libraries(${PROJECT_NAME}-ut ${PROJECT_NAME}-lib)
 target_compile_features(${PROJECT_NAME}-ut PRIVATE cxx_std_17)
 target_compile_options(${PROJECT_NAME}-ut PRIVATE ${FLAGS})
